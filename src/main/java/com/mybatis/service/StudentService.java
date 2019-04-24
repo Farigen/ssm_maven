@@ -6,5 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface StudentService {
-    public List<Student> getALlStudent();
+    List<Student> getALlStudent();
+    Long addStudent(Student student);
 }

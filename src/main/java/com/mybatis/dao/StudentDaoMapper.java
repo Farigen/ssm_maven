@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface StudentDaoMapper {
     List<Student> getAllStudent();
+    Long addStudent(Student student);
 }

@@ -59,11 +59,16 @@
         <!--配置数据源-->
         <property name="dataSource" ref="dataSource"></property>
         <!--指定配置文件的位置-->
-        <property name="configLocation" value="classpath:mybatis-config"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!--指定mapper文件的位置-->
         <property name="mapperLocations" value="classpath:com.mybatis.mapper/*.xml"></property>
     </bean>
 
+    <!--进行批量操作的SqlSession-->
+    <bean name="SqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+        <constructor-arg name="executorType" value="BATCH"></constructor-arg>
+    </bean>
     <!--扫描所有的mapper接口，让这些mapper接口自动注入-->
     <mybatis-spring:scan base-package="com.mybatis.dao"></mybatis-spring:scan>
 </beans>

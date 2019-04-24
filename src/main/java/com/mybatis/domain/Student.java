@@ -12,6 +12,15 @@ public class Student {
     private Integer Chinese;
     private Integer Math;
 
+    public Student(Integer stuid, String name, Integer chinese, Integer math) {
+        this.stuid = stuid;
+        this.name = name;
+        Chinese = chinese;
+        Math = math;
+    }
+    public Student() {
+    }
+
     public Integer getStuid() {
         return stuid;
     }
